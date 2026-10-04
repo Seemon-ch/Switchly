@@ -31,7 +31,12 @@ public class FlagController {
     @PostMapping("/projects/{projectId}/flags")
     @ResponseStatus(HttpStatus.CREATED)
     public Flag create(@PathVariable UUID projectId, @Valid @RequestBody CreateFlagRequest request) {
-        return flagService.create(projectId, request.key(), request.name());
+        return flagService.create(
+                projectId,
+                request.key(),
+                request.name(),
+                request.description()
+        );
     }
 
     @GetMapping("/projects/{projectId}/flags")
