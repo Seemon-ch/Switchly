@@ -1,0 +1,25 @@
+/infra/docker-compose.yml
+
+# IntelliJ IDEA
+.idea/
+**/.idea/
+*.iml
+
+# IntelliJ Scratches and Consoles
+.idea/shelf/
+.idea/workspace.xml
+
+# Libraries
+lib/
+libs/
+libraries/
+external-libraries/
+
+# Build files
+**/target/
+
+# Logs
+*.log
+
+# Environment files
+.env
