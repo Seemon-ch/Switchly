@@ -1,16 +1,12 @@
 package live.switchly.api.repository;
 
 import live.switchly.api.model.Organization;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
-public interface OrganizationRepository {
+@Repository
+public interface OrganizationRepository extends JpaRepository<Organization, UUID> {
 
-    Organization save(Organization organization);
-
-    Optional<Organization> findById(UUID id);
-
-    List<Organization> findAll();
 }

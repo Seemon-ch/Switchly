@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/orgs")
+@RequestMapping("/api/v1")
 public class OrganizationController {
 
     private final OrganizationService organizationService;
@@ -26,19 +26,19 @@ public class OrganizationController {
         this.organizationService = organizationService;
     }
 
-    @PostMapping
+    @PostMapping("/orgs")
     @ResponseStatus(HttpStatus.CREATED)
     public Organization create(@Valid @RequestBody CreateOrganizationRequest request) {
-        return organizationService.create(request.name());
+        return organizationService.save(request.name());
     }
 
-    @GetMapping
+    @GetMapping("/orgs")
     public List<Organization> getAll() {
-        return organizationService.getAll();
+        return organizationService.findAll();
     }
 
-    @GetMapping("/{orgId}")
+    @GetMapping("/orgs/{orgId}")
     public Organization getById(@PathVariable UUID orgId) {
-        return organizationService.getById(orgId);
+        return organizationService.findById(orgId);
     }
 }
