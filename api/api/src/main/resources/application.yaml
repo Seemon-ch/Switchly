@@ -1,3 +1,10 @@
 spring:
   application:
     name: api
+  datasource:
+    url: jdbc:postgresql://localhost:15432/switchly
+    username: switchly
+    password: switchly
+  jpa:
+    hibernate:
+      ddl-auto: validate
